@@ -12,28 +12,19 @@ export default function Signup() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
-    const [role, setRole] = useState("");
-    const roles = ["Volunteer", "Donor"];
-    const [community, setCommunity] = useState("");
-    const [neighborhood, setNeighborhood] = useState("");
-    const [donorAddress, setDonorAddress] = useState("");
+    const [school, setSchool] = useState("");
+    const schools = ["UNC"];
     const [isDisabled, setIsDisabled] = useState(true);
 
     const updateEmail = (e) => {setEmail(e.target.value)};
     const updatePassword = (e) => {setPassword(e.target.value)};
     const updateName = (e) => {setName(e.target.value)};
-    const updateCommunity = (e) => {setCommunity(e.target.value)};
-    const updateNeighborhood = (e) => {setNeighborhood(e.target.value)};
-    const updateDonorAddress = (e) => {setDonorAddress(e.target.value)};
+    const updateSchool = (e) => {setSchool(e.target.value)};
     let history = useHistory();
 
-    const handleRoleChange = (e) => {
-        setRole(roles[e.target.value]);
+    const handleSchoolChange = (e) => {
+        setSchool(schools[e.target.value]);
     }
-
-    useEffect(() => {
-        setIsDisabled(role !== "Donor");
-    }, [role]);
 
 
     const auth = getAuth(app);
@@ -44,20 +35,11 @@ export default function Signup() {
         createUserWithEmailAndPassword(auth, email, password)
         .then((UserCredential) => {
             const user = UserCredential.user;
-            (role === "Volunteer") ?
                 (setDoc(doc(collection(db, "users"), user.uid), {
-                    name: name, role: role, community: community, neighborhood: neighborhood,
-                    historyAdded: { neighborhoodName: [], donations: [] }
-                })) :
-                (setDoc(doc(collection(db, "users"), user.uid), {
-                    name: name, role: role, community: community, neighborhood: neighborhood,
-                    address: donorAddress
+                    email: email, name: name, school: school
                 }))
         })
-        .then(
-            (role === "Volunteer") ?
-            history.push('/volunteerDashboard') : history.push('/donorDashboard')
-        )
+
         .catch((error) => {
             console.log(error.code);
             console.log(error.message);
@@ -88,23 +70,11 @@ export default function Signup() {
                                 <Form.Control type="name" onChange={updateName} placeholder="Enter name" required></Form.Control>
                             </Form.Group>
                             <Form.Group id="roles">
-                            <Form.Label>Role </Form.Label>
-                                <Form.Select onChange={handleRoleChange}>
-                                    <option>Select role</option>
-                                    {roles.map((currentRole, key) => <option value={key}>{currentRole}</option>)}
+                            <Form.Label>School </Form.Label>
+                                <Form.Select onChange={handleSchoolChange}>
+                                    <option>Select School</option>
+                                    {schools.map((currentSchool, key) => <option value={key}>{currentSchool}</option>)}
                                 </Form.Select>
-                            </Form.Group>
-                            <Form.Group>
-                                <Form.Label>Address </Form.Label>
-                                <Form.Control type="address" onChange={updateDonorAddress} placeholder="Enter address" disabled={isDisabled}></Form.Control>
-                            </Form.Group>
-                            <Form.Group id="community">
-                                <Form.Label>Community </Form.Label>
-                                <Form.Control type="community" onChange={updateCommunity} placeholder="Enter community" required></Form.Control>
-                            </Form.Group>
-                            <Form.Group id="neighborhood">
-                                <Form.Label>Neighborhood </Form.Label>
-                                <Form.Control type="neighborhood" onChange={updateNeighborhood} placeholder="Enter neighborhood" required></Form.Control>
                             </Form.Group>
                             &nbsp;
                             <Button className="w-100" type="submit" id='button' onClick={handleSignup}>Create Account</Button>
