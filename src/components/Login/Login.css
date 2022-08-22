@@ -1,0 +1,14 @@
+#login {
+    background-color: #F1EBD9;
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 30px auto 30px auto;
+    overflow: hidden;
+}
+
+#button {
+    background-color: #A9B638;
+    border-color: #A9B638;
+    color: black;
+}
