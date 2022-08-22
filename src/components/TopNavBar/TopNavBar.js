@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import logo from "../../assets/img.png";
 import "./NavStyles.css"
-import Hamburger from "./Hamburger";
 import NavContent from "./NavContent";
-import HamburgerMenu from "./HamburgerMenu";
 
 const App = () => {
     const [hamburgerOpen, setHamburgerOpen] = useState(true);
@@ -14,12 +12,7 @@ const App = () => {
 
     return (
         <div id="mainNavBar">
-            <a href="../Home"><img src={logo} alt="Porch Logo" id="headerLogo"/></a>
-            <div id="mobileMenu" className="navMenu" >
-                <div id="hamburgerMenu" onClick={toggleHamburger}>
-                    { hamburgerOpen ? <Hamburger /> : <HamburgerMenu /> }
-                </div>
-            </div>
+            <a href="../Home"><img src={logo} alt="Logo" id="headerLogo"/></a>
             <div id="desktopMenu" className="navMenu">
                 <ul> <NavContent /> </ul>
             </div>

@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter} from 'react-router-dom';
 /*import 'bootstrap/dist/css/bootstrap.min.css'*/
 
+document.body.style = 'background: #080808';
+
 ReactDOM.render(
   <BrowserRouter>
       <App />

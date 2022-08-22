@@ -1,15 +1,13 @@
 import React from 'react';
 import "./NavStyles.css"
+import login from "../../assets/login.png";
 
 
 export default function NavContent() {
     return (
         <div>
-                <li className="navItem" ><a href="../Home" className="navItemLink">Our Communities</a></li>
-                <li className="navItem"><a href="../Home" className="navItemLink">Our Story</a></li>
-                <li className="navItem"><a href="../Home" className="navItemLink">Get Involved!</a></li>
-                <li className="navItem"><a href="../Home" className="navItemLink">Contact Us</a></li>
-                <li className="navItem"><a href="../Home" className="navItemLink">Login</a></li>
+                <li className="navItem"><a href="../Home" className="navItemLink">Sign In</a></li>
+                {/* <li className="navItem"><a href=""><img src={login} alt="Login" id="loginbutton"></img></a></li> */}
         </div>
     )
 }

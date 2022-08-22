@@ -1,0 +1,25 @@
+body, html {
+    margin: 0;
+    height: 100%; 
+    font-family: var(--fontFamily);
+}
+#contentWrapper{
+    width: 100%;
+    height: 100%;
+    background-color: var(--primaryBackgroundColor);
+}
+
+#hookTextArea {
+    position: absolute;
+    bottom: 10%;
+    margin: 0 0 0px 70px;
+}
+
+.hookText {
+    color: var(--primaryTextColor);
+    font-size: 120px;
+    font-weight: 1000;
+    font-family: var(--fontFamily);
+    line-height: 105px;
+
+}
