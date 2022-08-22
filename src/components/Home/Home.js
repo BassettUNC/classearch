@@ -8,9 +8,9 @@ const App = () => {
         <TopNavBar />
             <div id="contentWrapper">
                 <div id = "hookTextArea">
-                    <p className='hookText' id = "line 1"> Let's</p>
-                    <p className='hookText' id = "line 2"> Go</p>
-                    <p className='hookText' id = "line 3" style={{color: "#7bafd4"}}> Tarheels</p>
+                    <p className='hookText' id = "hookLine1"> Let's</p>
+                    <p className='hookText' id = "hookLine2"> Go</p>
+                    <a href='' className='hookText'><p className='grow hookText' id = "hookLine3" style={{color: "#7bafd4"}}>Tarheels</p></a>                 
                 </div>
             </div>
         </div>

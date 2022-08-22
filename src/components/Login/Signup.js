@@ -1,4 +1,4 @@
-import { getAuth, createUserWithEmailAndPassword } from '@firebase/auth';
+import { getAuth, createUserWithEmailAndPassword } from "@firebase/auth";
 import { collection, doc, getFirestore, setDoc } from '@firebase/firestore';
 import React, { useEffect, useState } from 'react'
 import { Card, Form, Button, Container } from 'react-bootstrap';

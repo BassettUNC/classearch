@@ -4,11 +4,6 @@ import "./NavStyles.css"
 import NavContent from "./NavContent";
 
 const App = () => {
-    const [hamburgerOpen, setHamburgerOpen] = useState(true);
-
-    const toggleHamburger = () =>{
-        setHamburgerOpen(!hamburgerOpen);
-    }
 
     return (
         <div id="mainNavBar">

@@ -11,15 +11,17 @@ body, html {
 
 #hookTextArea {
     position: absolute;
-    bottom: 10%;
+    bottom: 15%;
     margin: 0 0 0px 70px;
 }
 
 .hookText {
     color: var(--primaryTextColor);
-    font-size: 120px;
+    font-size: 150px;
     font-weight: 1000;
     font-family: var(--fontFamily);
     line-height: 105px;
-
+    text-decoration: none;
 }
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
