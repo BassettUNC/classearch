@@ -1,5 +1,5 @@
 #login {
-    background-color: #F1EBD9;
+    background-color: #7bafd4;
     width: 90%;
     padding: 10px;
     border-radius: 10px;
@@ -7,8 +7,25 @@
     overflow: hidden;
 }
 
+.createHeader{
+    font-family: var(--fontFamily);
+    font-size:xx-large;  
+}
+
 #button {
-    background-color: #A9B638;
-    border-color: #A9B638;
+    background-color: #ffffff;
+    border-color: #000000;
     color: black;
+    font-family: var(--fontFamily);
+    font-size: larger;   
+}
+
+.fieldTitle {
+    font-family: var(--fontFamily);
+    font-size: x-large;
+}
+
+.loginInput{
+    font-family: var(--fontFamily);
+    font-size: larger;    
 }

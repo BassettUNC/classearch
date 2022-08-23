@@ -46,16 +46,16 @@ export default function Login() {
             <div className="w-100" style={{ maxWidth: "500px"}}>
                 <Card id='login'>
                     <Card.Body>
-                        <h2 className="text-center mb-4">Sign In</h2>
+                        <h2 className="text-center mb-4 createHeader">Sign In</h2>
                         <Form>
                             <Form.Group id="email">
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control type="email" onChange={updateEmail} placeholder="Enter email" required></Form.Control>
+                                <Form.Label className="fieldTitle">Email</Form.Label>
+                                <Form.Control className="loginInput" type="email" onChange={updateEmail} placeholder="Enter email" required></Form.Control>
                             </Form.Group>
                             &nbsp;
                             <Form.Group id="password">
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" onChange={updatePassword} placeholder="Enter password" required></Form.Control>
+                                <Form.Label className="fieldTitle">Password</Form.Label>
+                                <Form.Control className="loginInput" type="password" onChange={updatePassword} placeholder="Enter password" required></Form.Control>
                             </Form.Group>
                             &nbsp;
                             <Button className="w-100" type="submit" id='button' onClick={handleLogin}>Login</Button>

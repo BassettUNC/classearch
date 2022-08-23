@@ -55,23 +55,23 @@ export default function Signup() {
             <div className="w-100" style={{ maxWidth: "500px"}}>
                 <Card id='login'>
                     <Card.Body>
-                        <h2 className="text-center mb-4">Create Account</h2>
+                        <h2 className="text-center mb-4 createHeader">Create Account</h2>
                         <Form>
-                            <Form.Group id="email">
-                                <Form.Label>Email </Form.Label>
-                                <Form.Control type="email" onChange={updateEmail} placeholder="Enter email" required></Form.Control>
-                            </Form.Group>
-                            <Form.Group id="password">
-                                <Form.Label>Password </Form.Label>
-                                <Form.Control type="password" onChange={updatePassword} placeholder="Enter password" required></Form.Control>
-                            </Form.Group>
                             <Form.Group id="name">
-                                <Form.Label>Name </Form.Label>
-                                <Form.Control type="name" onChange={updateName} placeholder="Enter name" required></Form.Control>
+                                <Form.Label className="fieldTitle">Name </Form.Label>
+                                <Form.Control className="loginInput" type="name" onChange={updateName} placeholder="Enter name" required></Form.Control>
+                            </Form.Group> 
+                            <Form.Group id="email"><br />
+                                <Form.Label className="fieldTitle">Email </Form.Label>
+                                <Form.Control className="loginInput" type="email" onChange={updateEmail} placeholder="Enter email" required></Form.Control>
+                            </Form.Group><br />
+                            <Form.Group id="password">
+                                <Form.Label className="fieldTitle">Password </Form.Label>
+                                <Form.Control className="loginInput" type="password" onChange={updatePassword} placeholder="Enter password" required></Form.Control>
                             </Form.Group>
-                            <Form.Group id="roles">
-                            <Form.Label>School </Form.Label>
-                                <Form.Select onChange={handleSchoolChange}>
+                            <Form.Group id="schools"> <br />
+                            <Form.Label className="fieldTitle">School </Form.Label>
+                                <Form.Select lassName="loginInput" onChange={handleSchoolChange}>
                                     <option>Select School</option>
                                     {schools.map((currentSchool, key) => <option value={key}>{currentSchool}</option>)}
                                 </Form.Select>
