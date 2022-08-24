@@ -6,21 +6,21 @@ import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "@fi
 import { collection, doc, getFirestore, setDoc } from '@firebase/firestore';
 import app from '../../firebase/firebase';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../Login/Login.css';
-import { Link } from 'react-router-dom';
+
 
 const auth = getAuth(app);
 const db = getFirestore(app);
 
 const App = () => {
+    let uid = false;
     onAuthStateChanged(auth, (user) => {
         if (user) {
           // User is signed in, see docs for a list of available properties
           // https://firebase.google.com/docs/reference/js/firebase.User
-           let uid = user.uid;
+          uid = true;
           console.log("signed in");
         } else {
-            let uid = 0;
+            return;
         }
       });
 

@@ -3,8 +3,8 @@ import logo from "../../assets/img.png";
 import "./NavStyles.css"
 import NavContent from "./NavContent";
 
-const App = () => {
 
+const App = () => {
     return (
         <div id="mainNavBar">
             <a href="../Home"><img src={logo} alt="Logo" id="headerLogo"/></a>
